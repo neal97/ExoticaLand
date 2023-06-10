@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Utilisateurs{% endblock %}
+
+{% block body %}
+
+
+<h1>Utilisateurs</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">email</th>
+      <th scope="col">roles</th>
+      <th scope="col">nom</th>
+      <th scope="col">prenom</th>
+      <th scope="col">adresse</th>
+      <th scope="col">cp</th>
+      <th scope="col">tel</th>
+    </tr>
+  </thead>
+
+  <tbody class="table-group-divider">
+
+    {% for value in user %}
+        
+   
+      {# {{ dump(value) }} #}
+    
+   
+    <tr>
+      <th scope="row">{{value.id}}</th>
+      <td>{{value.email}}</td>
+      <td>{{value.roles.0}}</td>
+      <td>{{value.nom}}</td>
+      <td>{{value.prenom}}</td>
+      <td>{{value.adresse}} </td>
+      <td>{{value.cp }}</td>
+      <td>{{value.tel}}</td>
+      <td>
+      <a href=""><img src="{{ asset('img/loupe.png') }}" alt=""></a>
+      <a href="{{ path('update_utilisateurs', {'id' : value.id}) }}"><img src="{{ asset('img/update.png') }}" alt=""></a>
+      <a href="{{ path('delete_utilisateurs', {'id' : value.id}) }}"><img src="{{ asset('img/delete.png') }}" alt=""></a>
+      </td>
+
+
+    </tr>
+{% endfor %}
+ </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategorieController!{% endblock %}
+
+{% block body %}
+
+
+{# <h1>{{produits.categorie.nom}}</p></h1> #}
+
+
+{% for value in produits %}
+
+<div class="card" style="width: 18rem;">
+  <img src="{{value.photo}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{value.titre}}</h5>
+    <p class="card-text">{{value.description}}</p>
+    <p class="card-text">{{value.categorie.nom}}</p>
+    <p class="card-title">{{value.prix}} €</p>
+    <a href="#" class="btn btn-success">Ajoutez au panier</a>
+    <a href="{{ path('details_articles', {'id' : value.id}) }}"><img src="{{ asset('img/loupe.png') }}" alt=""></a>
+  </div>
+</div>
+{% endfor %}
+
+
+
+{% endblock %}

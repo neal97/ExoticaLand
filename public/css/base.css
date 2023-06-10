@@ -1,0 +1,32 @@
+@font-face {
+    font-family:'Bauhaus 93' ;
+    src: url('../font/bauhaus-93.ttf');
+  }
+  
+  *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+      font-family: "Bauhaus 93";
+  
+     
+    }
+
+    /* h1, h2, h3 {font-family: "Bauhaus 93";} */
+
+
+    a {
+        text-decoration: none;
+      }
+
+      .btn{
+        background-color: #E8CC0D;
+        color: black;
+      }
+      
+      .btn:hover{
+        background-color: rgb(237, 230, 101);
+        color: black;
+      }
+      

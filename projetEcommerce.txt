@@ -1,0 +1,42 @@
+E-COMMERCE - EXEMPLE
+
+USER
+-> ID - PK
+-> NOM
+-> PRENOM
+-> EMAIL
+-> PASSWORD
+-> ADRESSE
+-> CP
+-> TEL
+-> ROLE
+
+ARTICLES/PRODUITS
+    -> ID - PK
+    -> TITRE
+    -> DESCRIPTION
+    -> PRIX
+    -> CATEGORIE
+    -> PHOTO
+    -> DATE_CREATION
+
+PANIER
+    -> ID -> PK
+    -> ID_ARTICLE - FK
+    -> ID_USER - FK
+    -> PRIX
+
+COMMANDE
+    -> ID - PK
+    -> ID_USER - FK
+    -> ID_ARTICLE - FK
+    -> DATE_CREATION
+    -> PRIX
+
+COMNTACT
+    -> ID - PK
+    -> ID_USER - FK
+    -> MESSAGE
+    -> DATE
+    
+

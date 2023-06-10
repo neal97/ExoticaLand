@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfilController!{% endblock %}
+
+{% block body %}
+
+<h1>Mon compte</h1>
+
+<form action="">
+
+<label for="">Adresse E-mail</label><input type="email" value="{{ app.user.email}}">
+<label for="">Mot de passe</label><input disabled type="password" value="{{ app.user.password}}">
+<label for="">Adresse</label><input  type="text" value="{{ app.user.adresse}}">
+<label for="">Code Postal</label><input type="number" value="{{ app.user.cp}}">
+<label for="">Telephone</label><input type="number" value="{{ app.user.tel}}">
+
+<input type="submit" value="modifier">
+
+
+</form>
+
+
+{% endblock %}

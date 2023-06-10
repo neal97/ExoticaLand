@@ -1,0 +1,126 @@
+
+
+<header class="sticky-top">
+
+  <div id="navhaut" >
+
+
+
+      <div>
+        <a class="navbar-brand" href="{{ path('app_accueil') }}"><img src="{{ asset('/icons/EXOTIKALAND1.png') }}" alt=""></a>
+      </div>
+
+
+
+
+
+                  <div>
+                    <form id="recherche" action="{{ path('app_lookup') }}">
+                    <input type="search" name="search" placeholder="rechercher un produit..."/> <button type="submit"><img src="{{ asset('/icons/loupe.png') }}" alt=""></button>
+                    </form>
+                  </div>
+
+
+          <div class="dropdown">
+            <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+               {% if app.user %}
+                   Bonjour  {{ app.user.prenom }}
+
+                   {% else %}
+                    Connecter vous
+      
+                  {% endif %}
+            </button>
+
+            <ul class="dropdown-menu">
+
+            
+                              {% if app.user %}
+
+                              <li class="nav-item">
+                                  <a class="nav-link" href="{{ path('app_profil') }}">Mon Compte</a>
+                                </li>
+
+                                <li><hr class="dropdown-divider"></li>
+                        {% if is_granted('ROLE_ADMIN') %}
+
+
+                                  <li class="nav-item">
+                                  <a class="nav-link active" href="{{ path('app_articles') }}">___ADMIN-Articles</a>
+                                  </li>
+
+                                  <li><hr class="dropdown-divider"></li>
+
+                                  <li class="nav-item">
+                                  <a class="nav-link active" href="{{ path('app_categorie') }}">___ADMIN-Categorie</a>
+                                  </li>
+                                  
+                                    <li><hr class="dropdown-divider"></li>
+
+                                  <li class="nav-item">
+                                  <a class="nav-link active" href="{{ path('app_utilisateurs') }}">___ADMIN-Utilisateurs</a>
+                                  </li>
+
+                                                    {% endif %}
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li class="nav-item">
+                        <a class="nav-link active" href="">Mes Commandes</a>
+                        </li>
+
+                        <li><hr class="dropdown-divider"></li>          
+
+                        <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_logout') }}">Se Deconnecter</a>
+                       </li>
+
+
+                              {% else %}
+                                
+                        <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('app_login') }}">se connecter</a>
+                        </li>
+
+                        {% endif %}
+                
+            </ul>
+          </div>
+
+
+
+   <div>
+        <a href="{{ path('get_cart') }}"><img src="{{ asset('/icons/panier.png') }}" alt=""></a>
+
+   </div>
+
+
+
+</div>
+
+
+
+<nav class="container" id="navbas">
+
+<ul id="categorie">
+
+{# <li><a href="">Fruits et Légumes</a></li>
+<li><a href="">Viande</a></li>
+<li><a href="">Epicerie</a></li>
+<li><a href="">Boissons</a></li>
+<li><a href="">Cosmétique</a></li> #}
+
+{# <pre>
+  {{ dump(categorie) }}
+</pre> #}
+
+
+{% for value in categorie %}
+<li><a href="{{ path('categorie_articles', {'id': value.id}) }}">{{value.nom}}</a></li>
+{% endfor %}
+
+
+</ul>
+
+</nav>
+</header>

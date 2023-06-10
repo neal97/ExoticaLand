@@ -1,0 +1,81 @@
+
+#logo img{
+
+    height: 60px;
+    width: 60px;
+    margin: 0.5rem;
+  }
+  
+  #logo{
+    display: flex;
+    flex-direction: column;
+  }
+
+#navhaut{
+
+    background-color: #109D1A;
+
+    display: flex;
+    justify-content:space-around ;
+    align-items: center;
+
+    
+
+
+
+}
+
+
+
+#categorie{
+
+    display: flex;
+    
+    align-items: center;
+
+    
+}
+
+#categorie li {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 2rem;
+    align-items: center;
+    color: black;
+    border: outset;
+    background-color: white;
+
+}
+
+#categorie li a {
+   
+    color: black;
+    
+}
+
+
+
+#categorie :hover{
+    background-color: #E8CC0D;
+
+}
+
+
+#recherche input{
+    border-radius: 0.6rem;
+    width: 35rem;
+    height: 3rem;
+}
+
+#recherche button {
+    border-radius: 0.6rem;
+    background-color: #E8CC0D;
+    height: 3rem;
+    width: 3rem;
+}
+
+#recherche img {
+
+    color: #109D1A;
+}

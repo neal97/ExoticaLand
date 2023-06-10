@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategorieController!{% endblock %}
+
+{% block body %}
+
+<h1>Ajouter Des categories</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">nom</th>
+    </tr>
+  </thead>
+
+  <tbody class="table-group-divider">
+
+    {% for value in categorie %}
+        
+    
+    <tr>
+      <th scope="row">{{value.id}}</th>
+      <td>{{value.nom}}</td>
+      <td>
+      <a href=""><img src="{{ asset('img/loupe.png') }}" alt=""></a>
+      <a href="{{ path('update_categorie', {'id' : value.id}) }}"><img src="{{ asset('img/update.png') }}" alt=""></a>
+      <a href="{{ path('delete_categorie', {'id' : value.id}) }}"><img src="{{ asset('img/delete.png') }}" alt=""></a>
+      </td>
+
+
+    </tr>
+
+
+
+   {% endfor %}
+  </tbody>
+</table>
+
+
+{{form(formCategorie)}}
+
+{% endblock %}

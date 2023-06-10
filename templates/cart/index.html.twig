@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!
+{% endblock %}
+
+{% block body %}
+
+
+	<pre>
+					{{ dump(cart) }}
+				</pre>
+
+
+	{#### Card ########}
+
+		{% if cart|length > 0 %}
+
+{## Lien qui vide intégralement le panier ##}
+			<a class="text-dark" href="{{ path('delete_all_cart') }}"> Vider mon panier</a>
+
+                {% set total = null %}
+
+		{% for value in cart %}
+
+				{## Calcul total du prix d'un produits ( si plusieurs articles ) ** ##}
+        {% set total = total + (value.produits.prix * value.quantity) %}
+
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title">{{value.produits.titre}}</h5>
+					<p class="card-text">{{value.produits.description}}</p>
+					<p class="card-text">
+						Quantité :
+						{{value.quantity}}.</p>
+
+					{## ** Total prix du produits ##}
+					<p class="card-text">Prix : {{ (value.produits.prix * value.quantity)|number_format(2,',', '.')}}
+						euros.</p>
+
+
+					{## Liens : décrémenter, ajouter, supprimer ##}
+					<div class="ms-3 mt-3">
+						<a href="{{ path('decrease_cart', {'id': value.produits.id }) }}"><img src="{{ asset('img/moins.png') }}" alt="" class="me-2" style="width:20px"></a>
+						<a href="{{ path('post_cart', {'id': value.produits.id }) }}"><img src="{{ asset('img/plus.png') }}" alt="" class="me-2" style="width:20px"></a>
+						<a href="{{ path('delete_cart', {'id': value.produits.id }) }}"><img src="{{ asset('/img/delete.png') }}" alt="" class="me-2" style="width:20px"></a>
+					</div>
+				</div>
+			</div>
+
+		{% endfor %}
+
+		{## Nombre total de produit dans le panier ##}
+		Nombre de produit : {{ cart|length }}
+					
+				{## Total de tout les produits du panier | méthode qui rajoute la virgule à la place du point sur le prix##}
+        <p class="card-text">Prix total : {{ (total)|number_format(2,',', '.')}}
+						euros.</p>
+
+		{#### fin Card ########}
+
+	{% else %}
+		{## Redirection vers la page home si le panier est vide ##}
+		<button href="{{ path('app_accueil') }}">VOTRE PANIER EST VIDE</button>
+	{% endif %}
+
+
+<a href="{{ path('paiement') }}">passer commande</a>
+
+
+
+{% endblock %}
+
+

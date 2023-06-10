@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticlesController!{% endblock %}
+
+{% block body %}
+
+<h1>Ajouter Des Articles</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Photo</th>
+      <th scope="col">description</th>
+      <th scope="col">categorie</th>
+      <th scope="col">Prix</th>
+      <th scope="col">stock</th>
+      <th scope="col">Date</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody class="table-group-divider">
+
+    {% for value in articles %}
+        
+   
+      {# {{ dump(value) }} #}
+    
+   
+    <tr>
+      <th scope="row">{{value.id}}</th>
+      <td>{{value.titre}}</td>
+      <td><img src="{{value.photo}}" width="100px" alt=""></td>
+      <td>{{value.description}}</td>
+      <td>{{value.categorie.nom}}</td>
+      <td>{{value.prix}} €</td>
+      <td>{{value.stock}} €</td>
+      <td>{{value.date | date('d-m-Y') }}</td>
+      <td>
+      <a href="{{ path('details_articles', {'id' : value.id}) }}"><img src="{{ asset('img/loupe.png') }}" alt=""></a>
+      <a href="{{ path('update_articles', {'id' : value.id}) }}"><img src="{{ asset('img/update.png') }}" alt=""></a>
+      <a href="{{ path('delete_articles', {'id' : value.id}) }}"><img src="{{ asset('img/delete.png') }}" alt=""></a>
+      </td>
+
+
+    </tr>
+
+
+
+   {% endfor %}
+  </tbody>
+</table>
+
+
+{{form(formArticles)}}
+
+{% endblock %}

@@ -1,0 +1,54 @@
+
+
+body{
+  background-image: url('/img/jungle3.jpg');
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+
+#global{
+  background-color: rgba(255, 255, 255, 0.905);;
+  
+  
+}
+
+
+
+#carouselExampleAutoplaying{
+
+ 
+  margin: auto;
+    padding: 2rem;
+    
+  
+
+}
+
+.carousel-item img{
+
+  
+height: 30rem;
+}
+
+
+
+#carte{
+
+justify-content: center;
+flex-wrap: wrap;
+
+}
+
+.card{
+
+  margin: 1.5rem;
+}
+
+
+
+
+
+
+

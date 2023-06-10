@@ -1,0 +1,24 @@
+{% extends 'security/login.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+<div class="signinform">
+    <h1>Inscriprion</h1>
+
+    <div class="connexion">
+
+    {{ form_start(registrationForm) }}
+    
+
+
+
+
+
+        {{ form_end(registrationForm) }}
+</div>
+   </div> 
+{% endblock %}

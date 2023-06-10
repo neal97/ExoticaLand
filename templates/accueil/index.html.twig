@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+  {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+{% block body %}
+<head>
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+</head>
+{# <pre>
+  {{ dump(articles) }}
+</pre> #}
+
+
+
+<div id="global" class="container">
+{# {{ app.user.email }} #}
+<h1 class="d-flex justify-content-center">Les plus vendu</h1>
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    
+    {% for value in articles %}
+    <div class="carousel-item active">
+      <img src="{{value.photo}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item ">
+      <img src="" class="d-block w-100" alt="">
+    </div>
+  {% endfor %}
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<h1 class="d-flex justify-content-center">Liste des Produits</h1>
+
+<div id="carte" class="d-flex">
+      {% for value in pagination %}
+        
+
+      <div class="card" style="width: 18rem;">
+        <img src="{{value.photo}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{value.titre}}</h5>
+        <p class="card-text">{{value.description}}</p>
+        <p class="card-title">{{value.prix}} €</p>
+        <a href="{{ path('post_cart', {'id' : value.id}) }}" class="btn ">Ajoutez au panier</a>
+        <a href="{{ path('details_articles', {'id' : value.id}) }}"><img src="{{ asset('img/loupe.png') }}" alt=""></a>
+      </div>
+    </div>
+    {% endfor %}
+
+    </div>
+
+        <div class="pagination mt-3 d-flex pagination-lg justify-content-center">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+  
+  </div>
+
+
+
+
+
+
+{% endblock %}
