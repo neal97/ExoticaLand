@@ -1,3 +1,5 @@
+
+
 <header class="sticky-top">
 
   <div id="navhaut" >
@@ -25,7 +27,7 @@
                    Bonjour  {{ app.user.prenom }}
 
                    {% else %}
-                    Connecter vous
+                    Connectez-vous
       
                   {% endif %}
             </button>
@@ -77,9 +79,9 @@
                               {% else %}
                                 
                         <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('app_login') }}">se connecter</a>
+                        <a class="nav-link active" href="{{ path('app_login') }}">Se connecter</a>
                         </li>
-
+                        
                         <li><hr class="dropdown-divider"></li>   
 
                       <li class="nav-item">
@@ -104,18 +106,4 @@
 
 
 
-<nav class="container" id="navbas">
-
-<ul id="categorie">
-
-
-
-{% for value in categorie %}
-<li><a href="{{ path('categorie_articles', {'id': value.id}) }}">{{value.nom}}</a></li>
-{% endfor %}
-
-
-</ul>
-
-</nav>
 </header>

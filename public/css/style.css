@@ -16,30 +16,10 @@ body{
 
 
 
-#carouselExampleAutoplaying{
-
- 
-  margin: auto;
-    padding: 2rem;
-    
-  
-
-}
-
-.carousel-item img{
-
-  
-height: 30rem;
-}
 
 
 
-#carte{
 
-justify-content: center;
-flex-wrap: wrap;
-
-}
 
 .card{
 
@@ -48,7 +28,29 @@ flex-wrap: wrap;
 
 
 
+.plus-vendu{
 
+
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.3), 
+    rgba(0, 0, 0, 0.3)
+  ),  url('/img/decouvrir.jpg');
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  height: 25rem;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  margin: 3rem;
+
+
+
+}      
+   
 
 
 

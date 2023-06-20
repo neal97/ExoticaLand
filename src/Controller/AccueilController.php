@@ -22,8 +22,7 @@ class AccueilController extends MyController
             6
         );
 
-        $categorie = $repoCategorie->findAll();
-        // $this->getUser()
+        
         
 
 
@@ -33,7 +32,7 @@ class AccueilController extends MyController
             'controller_name' => 'AccueilController',
             'articles' => $articles,
             'pagination' =>$pagination,
-            // 'categorie' => $categorie
+           
         ]);
     }
     

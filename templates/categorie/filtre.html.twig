@@ -5,16 +5,22 @@
 {% block body %}
 
 
-{# <h1>{{produits.categorie.nom}}</p></h1> #}
 
+
+
+<section class="block-cate ">
+
+<h1>{{produits.owner.nom}}</h1>
+
+<div class="d-flex row filtre-cate ">
 
 {% for value in produits %}
 
-<div class="card" style="width: 18rem;">
-  <img src="{{value.photo}}" class="card-img-top" alt="...">
+<div class="card carte-cate col-12 col-md-6 " style="width: 18rem;">
+  <img src="{{value.photo}}" class="card-img-top p-3 img-responsive" style="height: 15rem"  alt="...">
   <div class="card-body">
     <h5 class="card-title">{{value.titre}}</h5>
-    <p class="card-text">{{value.description}}</p>
+    {# <p class="card-text">{{value.description}}</p> #}
     <p class="card-text">{{value.categorie.nom}}</p>
     <p class="card-title">{{value.prix}} €</p>
     <a href="#" class="btn btn-success">Ajoutez au panier</a>
@@ -23,6 +29,10 @@
 </div>
 {% endfor %}
 
+</div>
+
+
+</section>
 
 
 {% endblock %}

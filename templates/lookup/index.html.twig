@@ -5,21 +5,27 @@
 {% block body %}
 
 
-<div id="carte" class="d-flex">
+<section class=" p-4 ">
+
+<h2>Recherche pour "{{articles.0.titre}}"</h2>
+
+<div id="carte" class="d-flex justify-content-center">
       {% for value in articles %}
         
 
-      <div class="card" style="width: 18rem;">
-        <img src="{{value.photo}}" class="card-img-top" alt="...">
+      <div class="card p-3 m-3" style="width: 18rem;">
+        <img src="{{value.photo}}" class="card-img-top" style="height: 15rem"  alt="...">
       <div class="card-body">
         <h5 class="card-title">{{value.titre}}</h5>
-        <p class="card-text">{{value.description}}</p>
+        {# <p class="card-text">{{value.description}}</p> #}
         <p class="card-title">{{value.prix}} €</p>
         <a href="{{ path('post_cart', {'id' : value.id}) }}" class="btn ">Ajoutez au panier</a>
         <a href="{{ path('details_articles', {'id' : value.id}) }}"><img src="{{ asset('img/loupe.png') }}" alt=""></a>
       </div>
     </div>
     {% endfor %}
+</div>
 
+</section>
 
 {% endblock %}

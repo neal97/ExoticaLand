@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'registration/bases.html.twig' %}
   {% block stylesheets %}
              <link rel="stylesheet" href="{{ asset('css/form.css') }}">
         {% endblock %}
@@ -26,15 +26,20 @@
 
 
     <div class="signinform">
-        <h1>Espace Connexion</h1>
+        <h1 class="text-center fw-bold">Espace Connexion</h1>
 
 
 <div class="connexion">
 
-    <h1 class="h3 mb-3 font-weight-normal">Connecter vous</h1>
-    <label for="inputEmail">Email</label>
+    <h3 class=" text-center fw-bold">Connectez-vous</h3>
+    <div class="trait "></div>
+
+    
+    <label class="my-2" for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Mot de passe</label>
+    
+
+    <label class="my-2" for="inputPassword">Mot de passe</label>
     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
     <input type="hidden" name="_csrf_token"
@@ -44,21 +49,21 @@
         {# Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
         See https://symfony.com/doc/current/security/remember_me.html #}
 
-        <div class="checkbox mb-3">
+        <div class="checkbox  my-2">
             <label>
-                <input type="checkbox" name="_remember_me"> Remember me
+                <input type="checkbox" name="_remember_me"> Se souvenir de moi
             </label>
         </div>
    
 
-    <button class="btn btn-lg " type="submit">
+    <button class="btn btn-lg m-2" type="submit">
         Connexion
     </button>
 </form>
 
-<a href="{{ path('app_register') }}">Pas de compte ? Creéz en un maintenant</a>
+<a class="p-2 text-center" href="{{ path('app_register') }}">Pas de compte ? Creéz en un maintenant</a>
 
-<a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié ?</a>
+<a class="p-2 text-center" href="{{ path('app_forgot_password_request') }}">Mot de passe oublié ?</a>
 </div>
 
 </div>

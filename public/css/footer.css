@@ -1,6 +1,6 @@
 footer{
     display: flex;
-    background-color: #102940;
+    background-color: #101811;
     height: 17rem;
     justify-content: space-between;
     color: white;
@@ -9,11 +9,19 @@ footer{
     padding: 4rem;
   }
   
+footer a{
+  color: white;
+}
+
+footer a:hover{
+  color: rgb(243, 243, 57);
+}
+
 
   #bcontact {
-    background-color: #1c87c9;
-    box-shadow: 0 5px 0 #105cad;
-    color: white;
+    background-color: #ead63b;
+    box-shadow: 0 5px 0 #eee237;
+    color: black;
    padding: 1em 1.5em;
    position: relative;
    text-decoration: none;
@@ -22,5 +30,5 @@ footer{
   }
   
   #bcontact:hover{
-    background-color: rgb(101, 199, 237);
+    background-color: rgb(243, 243, 57);
   }

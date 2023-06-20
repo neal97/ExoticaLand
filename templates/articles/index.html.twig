@@ -4,6 +4,8 @@
 
 {% block body %}
 
+<section class="container">
+
 <h1>Ajouter Des Articles</h1>
 
 <table class="table">
@@ -36,7 +38,7 @@
       <td>{{value.description}}</td>
       <td>{{value.categorie.nom}}</td>
       <td>{{value.prix}} €</td>
-      <td>{{value.stock}} €</td>
+      <td>{{value.stock}}</td>
       <td>{{value.date | date('d-m-Y') }}</td>
       <td>
       <a href="{{ path('details_articles', {'id' : value.id}) }}"><img src="{{ asset('img/loupe.png') }}" alt=""></a>
@@ -56,4 +58,6 @@
 
 {{form(formArticles)}}
 
+
+</section>
 {% endblock %}

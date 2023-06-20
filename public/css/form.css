@@ -29,44 +29,54 @@ a {
 .connexion{
     display: flex;
     flex-direction: column;
-    background-image: url("/img/E.png");
+    background-color:#109D1A ;
     background-size: cover;
-    background-repeat: no-repeat;
     border-radius: 20px;
     padding: 3rem;
     
     
 }
  
-  
-  h1 {
-    text-align: center;
-    font-size: 40px;
-    font-weight: 500;
-    color: #3b3663;
-  }
-  
-  
+
+.connexion h3,a {
+
+  color:#E8CC0D ;
+
+}
+
   
 
   
-  ::-webkit-input-placeholder {
-    /* Edge */
-    color: #aaa;
-  }
-  
-  :-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: #aaa;
-  }
-  
-  ::placeholder {
-    color: #aaa;
-  }
-  
+ 
+.trait{
+
+  background-color: #E8CC0D;
+ margin: auto;
+  width: 4rem;
+  height: 2px;
+
+}
 
 
 
+.form-register{
+
+  background-color: #109d19;
+  border-radius: 20px;
+  padding: 3rem;
+  
+ margin: 15rem;
+  
+
+
+}
+
+
+.form-register h3{
+
+  color:#E8CC0D ;
+
+}
 
   /** Responsive **/
  

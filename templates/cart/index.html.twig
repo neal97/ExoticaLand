@@ -3,20 +3,24 @@
 {% block title %}Hello CartController!
 {% endblock %}
 
+
+
+
 {% block body %}
 
 
-	<pre>
+	{# <pre>
 					{{ dump(cart) }}
-				</pre>
+				</pre> #}
 
+<section class="container cart-block ">
 
+<div class="cart-card   col-md-6 ">
 	{#### Card ########}
 
 		{% if cart|length > 0 %}
 
-{## Lien qui vide intégralement le panier ##}
-			<a class="text-dark" href="{{ path('delete_all_cart') }}"> Vider mon panier</a>
+
 
                 {% set total = null %}
 
@@ -25,10 +29,11 @@
 				{## Calcul total du prix d'un produits ( si plusieurs articles ) ** ##}
         {% set total = total + (value.produits.prix * value.quantity) %}
 
-			<div class="card" style="width: 18rem;">
+			<div class="card m-3" style="width: 18rem;">
 				<div class="card-body">
 					<h5 class="card-title">{{value.produits.titre}}</h5>
-					<p class="card-text">{{value.produits.description}}</p>
+					<img href="{{value.produits.photo}}">
+					<img src="{{ value.produits.photo }}" class="card-img-top p-3 img-responsive" style="height: 15rem"   alt="...">
 					<p class="card-text">
 						Quantité :
 						{{value.quantity}}.</p>
@@ -49,6 +54,10 @@
 
 		{% endfor %}
 
+</div>
+
+
+<div class="cart-prix col-md-6 ">
 		{## Nombre total de produit dans le panier ##}
 		Nombre de produit : {{ cart|length }}
 					
@@ -64,10 +73,14 @@
 	{% endif %}
 
 
-<a href="{{ path('paiement') }}">passer commande</a>
+<a class="btn btn-primary" href="{{ path('paiement') }}">passer commande</a>
 
+{## Lien qui vide intégralement le panier ##}
+			<a class="text-dark" href="{{ path('delete_all_cart') }}"> Vider mon panier</a>
+ 
+</div>
 
-
+</section>
 {% endblock %}
 
 
